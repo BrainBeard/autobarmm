@@ -3,17 +3,18 @@ define([
 	'underscore',
 	'backbone',
 	'backboneLocalstorage',
-	'models/todo'
-], function (_, Backbone, Store, Todo) {
+	'models/m_menubtn'
+], function (_, Backbone, Store, Model) {
 	'use strict';
 
-	var TodosCollection = Backbone.Collection.extend({
+	var Collection = Backbone.Collection.extend({
 		// Reference to this collection's model.
-		model: Todo,
+		model: Model,
 
 		// Save all of the todo items under the `"todos"` namespace.
-		localStorage: new Store('todos-backbone'),
+		localStorage: new Store('menu'),
 
+		/*
 		// Filter down the list of all todo items that are finished.
 		completed: function () {
 			return this.filter(function (todo) {
@@ -39,7 +40,8 @@ define([
 		comparator: function (todo) {
 			return todo.get('order');
 		}
+		*/
 	});
 
-	return new TodosCollection();
+	return new Collection();
 });
