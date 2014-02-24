@@ -28,10 +28,34 @@ define([
 		// Método Constructor
 		initialize: function () {
 
+			var obj, $obj, vel=1000;
 
 			this.render();
 
-			
+			this.objs = [
+				{ name: 'home_bkg_up',		delay: 0 },
+				{ name: 'logo',				delay: 0 },
+				{ name: 'home_bkg',			delay: 0 },
+				{ name: 'home_bkg_down',	delay: .3 },
+				{ name: 'txt_gana',			delay: 1 },
+				{ name: 'form',				delay: 1.1 },
+				{ name: 'label321',			delay: 1.2 },
+				{ name: 'btn_comprobar',	delay: 1.3 },
+				{ name: 'btn_sin',			delay: 1.4 },
+				{ name: 'mm',				delay: 1.5 },
+				{ name: 'btn_premios',		delay: 1.6 },
+				{ name: 'btn_info',			delay: 1.7 },
+				{ name: 'btn_bases_legales',delay: 1.8 }
+			];
+
+
+			for( var i in this.objs ){
+				obj = this.objs[i];
+				$obj = $('.' + obj.name);
+				$obj.css('opacity', 0).delay( obj.delay*vel ).animate({opacity: '1'}, 500);
+			}
+
+		
 			/*
 			this.$botones = this.$('.btn');
 			this.$btn0 = this.$('.btn')[0];

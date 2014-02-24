@@ -1,22 +1,139 @@
+body{
+  overflow: hidden;
+}
 
 
-/* ==========================================================================
-   Author's custom styles
-   ========================================================================== */
+.btn_info {
+  background-image: url("../img/btn-info.png");
+  position: absolute;
+  left: 720px;
+  top: 13px;
+  width: 131px;
+  height: 58px;
+  z-index: 197;
+}
+
+.btn_comprobar {
+  background-image: url("../img/btn-comprobar.png");
+  position: absolute;
+  left: 507px;
+  top: 370px;
+  width: 94px;
+  height: 29px;
+  z-index: 138;
+}
+
+.btn_bases_legales {
+  background-image: url("../img/btn-bases-legales.png");
+  position: absolute;
+  left: 37px;
+  top: 624px;
+  width: 73px;
+  height: 18px;
+  z-index: 2;
+}
+
+.btn_premios {
+  background-image: url("../img/btn-premios.png");
+  position: absolute;
+  left: 504px;
+  top: 513px;
+  width: 223px;
+  height: 77px;
+  z-index: 125;
+}
+
+.btn_sin {
+  background-image: url("../img/btn-sin.png");
+  position: absolute;
+  left: 507px;
+  top: 400px;
+  width: 94px;
+  height: 19px;
+  z-index: 134;
+}
+
+.form {
+  background-image: url("../img/form.png");
+  position: absolute;
+  left: 271px;
+  top: 240px;
+  width: 330px;
+  height: 125px;
+  z-index: 139;
+}
+
+.home_bkg_up {
+  background-image: url("../img/home-bkg-up.png");
+  position: absolute;
+  left: -54px;
+  top: -64px;
+  width: 986px;
+  height: 234px;
+  z-index: 116;
+}
+
+.home_bkg {
+  background-image: url("../img/home-bkg.png");
+  position: absolute;
+  left: 30px;
+  top: 98px;
+  width: 925px;
+  height: 404px;
+  z-index: 88;
+}
+
+.home_bkg_down {
+  background-image: url("../img/home-bkg-down.png");
+  position: absolute;
+  left: 0px;
+  top: 401px;
+  width: 810px;
+  height: 274px;
+  z-index: 87;
+}
 
 
+.label321 {
+  background-image: url("../img/321.png");
+  position: absolute;
+  left: 271px;
+  top: 370px;
+  width: 234px;
+  height: 49px;
+  z-index: 152;
+}
 
+.logo {
+  background-image: url("../img/logo.png");
+  position: absolute;
+  left: 2px;
+  top: 50px;
+  width: 209px;
+  height: 121px;
+  z-index: 201;
+}
 
+.mm {
+  background-image: url("../img/mm.png");
+  position: absolute;
+  left: 568px;
+  top: 206px;
+  width: 173px;
+  height: 281px;
+  z-index: 148;
+}
 
+.txt_gana {
+  background-image: url("../img/txt-gana.png");
+  position: absolute;
+  left: 155px;
+  top: 164px;
+  width: 291px;
+  height: 73px;
+  z-index: 117;
+}
 
-
-
-
-
-
-
-
-
-
-
-
+#dom_app{
+  overflow: hidden;
+}
