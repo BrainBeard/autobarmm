@@ -28,31 +28,74 @@ define([
 		// Método Constructor
 		initialize: function () {
 
-			var obj, $obj, vel=1000;
+			var obj, $obj, delayAcumulado = 1;
 
 			this.render();
 
 			this.objs = [
-				{ name: 'home_bkg_up',		delay: 0 },
-				{ name: 'logo',				delay: 0 },
-				{ name: 'home_bkg',			delay: 0 },
-				{ name: 'home_bkg_down',	delay: .3 },
-				{ name: 'txt_gana',			delay: 1 },
-				{ name: 'form',				delay: 1.1 },
-				{ name: 'label321',			delay: 1.2 },
-				{ name: 'btn_comprobar',	delay: 1.3 },
-				{ name: 'btn_sin',			delay: 1.4 },
-				{ name: 'mm',				delay: 1.5 },
-				{ name: 'btn_premios',		delay: 1.6 },
-				{ name: 'btn_info',			delay: 1.7 },
-				{ name: 'btn_bases_legales',delay: 1.8 }
+				{ name: 'home_bkg',			delay: 0,	fx: 'slideDown' },
+				{ name: 'home_bkg_up',		delay: .5,	fx: 'slideRight' },
+				{ name: 'home_bkg_down',	delay: .5,	fx: 'slideLeft' },
+				{ name: 'txt_gana',			delay: .5 },
+				{ name: 'form',				delay: .1 },
+				{ name: 'label321',			delay: .1 },
+				{ name: 'btn_comprobar',	delay: .1 },
+				{ name: 'btn_sin',			delay: .1 },
+				{ name: 'mm',				delay: .1 },
+				{ name: 'btn_premios',		delay: .1 },
+				{ name: 'btn_info',			delay: .1 },
+				{ name: 'btn_bases_legales',delay: .1 },
+				{ name: 'logo',				delay: 0 }
 			];
-
 
 			for( var i in this.objs ){
 				obj = this.objs[i];
+
+				//GUARDO EL DELAY ACUMULADO POR TODOS LOS ELEMENTOS
+				delayAcumulado += obj.delay;
+
 				$obj = $('.' + obj.name);
-				$obj.css('opacity', 0).delay( obj.delay*vel ).animate({opacity: '1'}, 500);
+
+				// POR DEFECTO EFECTO ALPHA
+				if( typeof obj.fx == 'undefined') obj.fx = 'alpha';
+
+				// ANIMO SEGÚN EL EFECTO DE CADA ELEMENTO
+				switch(obj.fx){
+					case 'alpha':
+						$obj.css('opacity', 0)
+							.delay( delayAcumulado*1000 )
+							.animate({opacity: '1'}, 500);
+						break;
+					case 'slideDown':
+						//http://jqueryui.com/show
+						//show( selectedEffect, options, time, callback )
+						$obj.hide(1)
+							.delay( delayAcumulado*1000 )
+							.show('blind', { direction: 'down' }, 500);
+						break;
+					case 'slideUp':
+						//http://jqueryui.com/show
+						//show( selectedEffect, options, time, callback )
+						$obj.hide(1)
+							.delay( delayAcumulado*1000 )
+							.show('blind', { direction: 'up' }, 500);
+						break;
+					case 'slideLeft':
+						//http://jqueryui.com/show
+						//show( selectedEffect, options, time, callback )
+						$obj.hide(1)
+							.delay( delayAcumulado*1000 )
+							.show('blind', { direction: 'left' }, 500);
+						break;
+					case 'slideRight':
+						//http://jqueryui.com/show
+						//show( selectedEffect, options, time, callback )
+						$obj.hide(1)
+							.delay( delayAcumulado*1000 )
+							.show('blind', { direction: 'right' }, 500);
+						break;
+				}
+				
 			}
 
 		

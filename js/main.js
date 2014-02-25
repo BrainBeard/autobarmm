@@ -6,13 +6,16 @@ require.config({
 	// The shim config allows us to configure dependencies for
 	// scripts that do not call define() to register a module
 	shim: {
+		jqueryui: {
+			deps: ['jquery']
+		},
 		underscore: {
 			exports: '_'
 		},
 		backbone: {
 			deps: [
 				'underscore',
-				'jquery'
+				'jqueryui'
 			],
 			exports: 'Backbone'
 		},
@@ -22,11 +25,14 @@ require.config({
 		}
 	},
 	paths: {
-		jquery: '../bower_components/jquery/jquery',
-		underscore: '../bower_components/underscore/underscore',
-		backbone: '../bower_components/backbone/backbone',
-		backboneLocalstorage: '../bower_components/backbone.localStorage/backbone.localStorage',
-		text: '../bower_components/requirejs-text/text'
+		backbone: 				'../bower_components/backbone/backbone',
+		backboneLocalstorage: 	'../bower_components/backbone.localStorage/backbone.localStorage',
+		bootstrap: 				'../bower_components/bootstrap/bootstrap.min',
+		jquery: 				'../bower_components/jquery/jquery',
+		jqueryui: 				'../bower_components/jquery/jquery-ui',
+		modernizr: 				'../bower_components/modernizr/modernizr.min',
+		underscore: 			'../bower_components/underscore/underscore',
+		text: 					'../bower_components/requirejs-text/text'
 	}
 });
 
